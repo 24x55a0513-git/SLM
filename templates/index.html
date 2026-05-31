@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Love ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+    color:white;
+}
+
+.container{
+    padding:30px;
+}
+
+h1{
+    font-size:3rem;
+}
+
+.message{
+    font-size:1.3rem;
+    margin:20px;
+}
+
+.photo{
+    width:300px;
+    max-width:90%;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:250px;
+    max-width:90%;
+    border-radius:15px;
+}
+
+.heart{
+    position:fixed;
+    color:red;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ My Love ❤️</h1>
+
+<p class="message">
+Every moment with you is special 💕
+</p>
+
+<img src="/static/photo1.jpeg" class="photo">
+
+<div class="gallery">
+
+<img src="/static/photo1.jpeg">
+<img src="/static/photo2.jpeg">
+<img src="/static/photo3.jpeg">
+<img src="/static/photo4.jpeg">
+<img src="/static/photo5.jpeg">
+<img src="/static/photo6.jpeg">
+
+</div>
+
+</div>
+
+<script>
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.classList.add("heart");
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>

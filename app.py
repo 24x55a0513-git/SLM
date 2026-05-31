@@ -1,23 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return """
-    <html>
+    return render_template("index.html")
 
-    <body style="text-align:center; background:pink;">
-
-    <h1>Hello My Love ❤️</h1>
-
-    <img src="/static/photo.jpeg" width="300">
-
-    <p>You are my happiness 💖</p>
-
-    </body>
-
-    </html>
-    """
-if __name__=="__main__":
+if __name__ == "__main__":
     app.run(debug=True)
