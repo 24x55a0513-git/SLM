@@ -4,120 +4,941 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Love ❤️</title>
-
+<title>Manu ❤️ Sweety</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    padding:0;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3);
-    font-family:Arial,sans-serif;
-    text-align:center;
-    overflow-x:hidden;
-    color:white;
+font-family:'Segoe UI',sans-serif;
+background:
+linear-gradient(
+135deg,
+#ff758c 0%,
+#ff7eb3 35%,
+#ffc1cc 70%,
+#ffe4ec 100%
+);
+color:white;
+text-align:center;
+overflow-x:hidden;
+min-height:100vh;
 }
 
 .container{
-    padding:30px;
+padding:20px;
 }
-
 h1{
-    font-size:3rem;
+
+font-family:'Dancing Script',cursive;
+
+font-size:5rem;
+
+color:white;
+
+text-shadow:
+0 0 10px white,
+0 0 25px rgba(255,255,255,.7);
+
+animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 30px white,0 0 50px pink;
+}
+}
+.popupTitle{
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+margin-bottom:20px;
+
+text-shadow:
+0 0 10px rgba(255,255,255,.8),
+0 0 20px rgba(255,105,180,.5);
+}
+.opening{
+max-width:700px;
+margin:30px auto;
+font-family:'Dancing Script', cursive;
+font-size:2rem;
+line-height:1.8;
+padding:20px;
 }
 
-.message{
-    font-size:1.3rem;
-    margin:20px;
+#loveBtn{
+background:none;
+border:none;
+cursor:pointer;
+display:block;
+margin:40px auto;
+font-size:100px;
+color:#ff3366;
+text-shadow:0 0 25px pink;
+animation:pulse 1.5s infinite;
 }
 
-.photo{
-    width:300px;
-    max-width:90%;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(255,255,255,.6);
+#loveBtn{
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.3);
+
+border-radius:30px;
+
+padding:25px 45px;
+
+cursor:pointer;
+
+color:white;
+
+font-size:26px;
+
+box-shadow:
+0 8px 30px rgba(255,255,255,.2);
+
+animation:pulse 1.8s infinite;
+
+transition:.4s;
+}
+
+#loveBtn:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 40px rgba(255,255,255,.35);
+}
+
+#loveBtn:hover{
+transform:scale(1.08);
+box-shadow:0 0 50px rgba(255,105,180,1);
+}
+
+#loveBtn div{
+font-family:'Dancing Script', cursive;
+font-size:28px;
+margin-top:-5px;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+#photoCounter{
+    
+font-family:'Dancing Script',cursive;
+font-size:1.8rem;
+margin-top:10px;
+text-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+#loveContent{
+display:none;
+animation:fadeIn 1.5s;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+.slideshow{
+width:90%;
+max-width:450px;
+margin:30px auto;
+}
+
+.slide{
+width:100%;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,255,255,.8);
 }
 
 .gallery{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    margin-top:30px;
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+
+padding:20px;
+}
+.card{
+
+height:auto;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+}
+@media(max-width:768px){
+
+.gallery{
+
+grid-template-columns:
+repeat(2,1fr);
+
 }
 
-.gallery img{
-    width:250px;
-    max-width:90%;
-    border-radius:15px;
+}
+.loveLetterHeading{
+
+font-family:'Dancing Script',cursive;
+
+font-size:1.6rem;
+
+text-shadow:
+0 0 10px rgba(255,255,255,.5);
+
+margin-bottom:20px;
+
+}
+.card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,0.25);
+
+border-radius:25px;
+
+padding:18px;
+
+box-shadow:
+0 8px 32px rgba(255,255,255,0.15);
+
+transition:0.4s;
 }
 
-.heart{
-    position:fixed;
-    color:red;
-    animation:float 6s linear infinite;
+.card:hover{
+
+transform:
+translateY(-8px)
+scale(1.03);
+
+box-shadow:
+0 15px 40px rgba(255,255,255,0.25);
 }
 
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-    }
-    to{
-        transform:translateY(-100px);
-    }
+.card:hover{
+transform:translateY(-8px);
+}
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+
+border-radius:20px;
+
+cursor:pointer;
+
+display:block;
 }
 
+.card img:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 30px rgba(255,255,255,.6);
+}
+
+.card p{
+font-family:'Dancing Script', cursive;
+font-size:1.8rem;
+margin-top:10px;
+color:white;
+text-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+.heart,
+.rose{
+position:fixed;
+pointer-events:none;
+z-index:99999;
+will-change:transform;
+}
+
+
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.popup img{
+max-width:95%;
+max-height:90%;
+border-radius:20px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+cursor:pointer;
+color:white;
+}
+
+.love-letter{
+
+width:90%;
+max-width:850px;
+
+margin:50px auto;
+
+padding:30px;
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.25);
+
+border-radius:30px;
+
+box-shadow:
+0 8px 32px rgba(255,255,255,0.15);
+}
+.surpriseBtn{
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+border:4px solid rgba(255,255,255,.85);
+
+border-radius:50px;
+
+padding:18px 40px;
+
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:
+0 0 15px rgba(255,255,255,.6),
+0 0 30px rgba(255,192,203,.5),
+0 0 50px rgba(255,105,180,.4);
+
+transition:.4s;
+}
+
+.surpriseBtn:hover{
+
+transform:
+translateY(-3px)
+scale(1.08);
+
+box-shadow:
+0 0 25px rgba(255,255,255,.8),
+0 0 50px rgba(255,192,203,.8),
+0 0 80px rgba(255,105,180,.6);
+}
+
+footer{
+margin:40px 0;
+font-size:1rem;
+}
+
+audio{
+margin-top:15px;
+}
+#musicBtn{
+
+position:fixed;
+
+bottom:20px;
+right:20px;
+
+width:70px;
+height:70px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+color:white;
+
+font-size:28px;
+
+cursor:pointer;
+
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:
+0 0 25px rgba(255,255,255,.2);
+
+z-index:9999;
+}
+
+#musicBtn:hover{
+transform:scale(1.1);
+}
+.letterText{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2rem;
+
+line-height:1.8;
+
+color:white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,.4);
+
+max-height:60vh;
+overflow-y:auto;
+
+padding:10px;
+}
+
+#surprisePopup{
+
+background:rgba(0,0,0,.4);
+
+backdrop-filter:blur(8px);
+
+-webkit-backdrop-filter:blur(8px);
+}
+.slideshow{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+margin:30px auto;
+}
+.arrowBtn{
+
+width:60px;
+height:60px;
+
+min-width:60px;
+min-height:60px;
+
+padding:0;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border:none;
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+color:white;
+
+font-size:28px;
+font-weight:bold;
+
+cursor:pointer;
+
+border:2px solid rgba(255,255,255,.4);
+
+box-shadow:
+0 0 20px rgba(255,255,255,.2);
+
+transition:.3s;
+}
+.arrowBtn:hover{
+
+transform:scale(1.15);
+
+box-shadow:
+0 0 20px rgba(255,255,255,.7),
+0 0 40px rgba(255,192,203,.6);
+
+}
+#dots{
+margin-top:15px;
+margin-bottom:25px;
+}
+
+.dot{
+
+height:14px;
+width:14px;
+
+margin:0 4px;
+
+display:inline-block;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.dot.active{
+
+background:white;
+
+box-shadow:
+0 0 10px white,
+0 0 20px pink;
+
+transform:scale(1.2);
+}
+
+.dot:hover{
+
+transform:scale(1.3);
+
+background:white;
+}
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>❤️ My Love ❤️</h1>
+<h1>❤️ To My Love  ❤️</h1>
 
-<p class="message">
-Every moment with you is special 💕
+<div class="opening">
+
+<p>
+My dear SHANTHI <br><br>
+Before you continue,
+I want you to know that every photo,
+every memory and every word on this page
+comes straight from my heart.
+<br><br>
+Click my heart to begin ❤️
 </p>
 
-<img src="/static/photo1.jpeg" class="photo">
+<button id="loveBtn" onclick="showLove()">
+💓
+<div>My Feelings For You </div>
+</button>
+
+</div>
+
+<div id="loveContent">
+
+<audio id="bgMusic" loop>    
+<source src="/static/music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()">
+🎵
+</button>
+
+<div class="slideshow">
+
+<button class="arrowBtn" onclick="prevPhoto()">
+❮
+</button>
+
+<img id="slide" class="slide" src="/static/photo1.jpeg">
+
+<button class="arrowBtn" onclick="nextPhoto()">
+❯
+</button>
+</div>
+<p id="photoCounter">
+Photo 1 of 9 ❤️
+<div id="dots">
+
+<span class="dot active" onclick="goToPhoto(0)"></span>
+<span class="dot" onclick="goToPhoto(1)"></span>
+<span class="dot" onclick="goToPhoto(2)"></span>
+<span class="dot" onclick="goToPhoto(3)"></span>
+<span class="dot" onclick="goToPhoto(4)"></span>
+<span class="dot" onclick="goToPhoto(5)"></span>
+<span class="dot" onclick="goToPhoto(6)"></span>
+<span class="dot" onclick="goToPhoto(7)"></span>
+<span class="dot" onclick="goToPhoto(8)"></span>
+
+</div>
+</p>
 
 <div class="gallery">
 
-<img src="/static/photo1.jpeg">
-<img src="/static/photo2.jpeg">
-<img src="/static/photo3.jpeg">
-<img src="/static/photo4.jpeg">
-<img src="/static/photo5.jpeg">
-<img src="/static/photo6.jpeg">
+<div class="card">
+<img src="/static/photo1.jpeg" onclick="openPhoto(this.src)">
+<p>Our recent picture 🥰</p>
+</div>
+
+<div class="card">
+<img src="/static/photo2.jpeg" onclick="openPhoto(this.src)">
+<p>In ice berg 💕</p>
+</div>
+
+<div class="card">
+<img src="/static/photo3.jpeg" onclick="openPhoto(this.src)">
+<p>Second photo in same restaurant 💘</p>
+</div>
+
+<div class="card">
+<img src="/static/photo4.jpeg" onclick="openPhoto(this.src)">
+<p>My favourite pic ❤️</p>
+</div>
+
+<div class="card">
+<img src="/static/photo5.jpeg" onclick="openPhoto(this.src)">
+<p>Best photo of us 😍</p>
+</div>
+
+<div class="card">
+<img src="/static/photo6.jpeg" onclick="openPhoto(this.src)">
+<p>Our first photo together 💝</p>
+</div>
+
+<div class="card">
+<img src="/static/photo7.jpeg" onclick="openPhoto(this.src)">
+<p>My first gift to you💌</p>
+</div>
+
+<div class="card">
+<img src="/static/photo8.jpeg" onclick="openPhoto(this.src)">
+<p>Your first gift to me 🫶</p>
+</div>
+
+<div class="card">
+<img src="/static/photo9.jpeg" onclick="openPhoto(this.src)">
+<p>Our First Outing to the Restaurant 💓</p>
+</div>
+
+</div>
+
+<div class="loveLetterHeading">
+
+<h2>💌 This is not just a Love Letter,it Holds my Feelings,Emotions for you 💌</h2>
+<br>
+<br>
+
+<button class="surpriseBtn" onclick="showSurprise()">
+💌Open my Love Letter💌
+</button>
+<br><br>
+
+<button class="surpriseBtn" onclick="openMemoriesPage()">
+🎁 A Few More Surprises 🎁
+</button>
+</div>
+
+<footer>
+Made With 💓 For Shanthi
+</footer>
 
 </div>
 
 </div>
 
+<div id="photoPopup" class="popup">
+<span class="close" onclick="closePhoto()">&times;</span>
+<img id="popupImg">
+</div>
+
+<div id="surprisePopup" class="popup">
+
+<div style="
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.3);
+border-radius:30px;
+
+padding:35px;
+max-width:700px;
+width:90%;
+
+box-shadow:0 8px 32px rgba(255,255,255,.2);
+
+color:white;
+text-align:center;
+">
+
+<h2 class="popupTitle">
+💌 My Love Letter 💌
+</h2>
+
+<p class="letterText">
+
+Konni saarlu nenu alochistanu... nuvvu naa life lo vachaka chala chinna chinna vishayalu kuda special😌 ga anipinchadam start ayyayi.💝
+
+Rojulo em jarigina, adi neetho share cheyyali anipistundi. 😚😚 Happy ga unna, badha ga unna, naa mind lo first gurthuku vacche person nuvve.🥹 Nuvvu matladithe rojanta better ga anipistundi,💓 nuvvu navvithe naa face meeda kuda smile vachestundi.😇
+
+Nijam cheppali ante, nee presence naaku chala important aipoyindi. 😘 Oka message, oka call, ledha oka chinna conversation kuda naa day ni marchestundi. 💞 Nuvvu naaku entha special oo maatallo cheppadam kastam.😳
+
+Naa life lo chala mandi vacharu, vellaru. Kani kontha mandi matram mana heart lo permanent place sampadinchukuntaru.😣💫 Nuvvu alanti vallalo okaru.
+
+Ninnu chusthe naaku peace anipistundi. Nuvvu happy ga unte naaku santosham💟. Nuvvu badha padithe naaku kuda badha. Adi prema kaadho, care kaadho,💌💕 ledha renditilo konchem konchemo naaku teliyadu... kani nuvvu naaku chala special ani matram telusu.❣️🫶
+
+Nuvvu ilaage naa life lo undali ani korukuntanu.👥🤞 Endukante konni relationships ki labels avasaram undavu... vaati value manaki telustundi anthe. ❤️
+
+Enni godavalu vachina, enni misunderstandings vachina, nuvvu eppudu naa pakkane unnanduku chala thanks. 🫶❤️‍🩹
+
+Nuvvante naaku chala istam kanna. 🥺💖
+Naa life lo nuvvu undadam naaku chala special feeling. ✨
+
+
+
+Endukante naa rojullo chala mandi untaru... kani naa manasulo matram nuvvu okkadanive. ❤️🥹
+
+I really love you so much ra bangaram. 🫂💘
+Promise chesavu kadha... eppatiki untanu ani. Adhi marchipoku. 🥺🤞❤️
+</p>
+
+<br>
+
+<button class="surpriseBtn" onclick="closeSurprise()">
+❤️ Close Letter
+</button>
+
+</div>
+
+</div>
 <script>
+    function showLove(){
 
+document.querySelector(".opening").style.display="none";
+
+document.getElementById("loveContent").style.display="block";
+
+let music=document.getElementById("bgMusic");
+
+music.play().catch(()=>{});
+
+heartInterval = setInterval(createHeart,800);
+
+roseInterval = setInterval(createRose,1800);
+
+}
+function toggleMusic(){
+
+let music=document.getElementById("bgMusic");
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
+}
+function openPhoto(src){
+
+document.getElementById("photoPopup").style.display="flex";
+
+document.getElementById("popupImg").src=src;
+
+}
+
+function closePhoto(){
+
+document.getElementById("photoPopup").style.display="none";
+
+}
+
+function showSurprise(){
+
+document.getElementById("surprisePopup").style.display="flex";
+
+}
+
+function closeSurprise(){
+
+document.getElementById("surprisePopup").style.display="none";
+
+}
+
+const photos=[
+"/static/photo1.jpeg",
+"/static/photo2.jpeg",
+"/static/photo3.jpeg",
+"/static/photo4.jpeg",
+"/static/photo5.jpeg",
+"/static/photo6.jpeg",
+"/static/photo7.jpeg",
+"/static/photo8.jpeg",
+"/static/photo9.jpeg"
+];
 function createHeart(){
 
 let heart=document.createElement("div");
 
-heart.innerHTML="❤️";
+heart.className="heart";
 
-heart.classList.add("heart");
+heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize=(20+Math.random()*30)+"px";
+heart.style.top="-50px";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>{
+let pos=-50;
+
+const fall=setInterval(()=>{
+
+pos+=2;
+
+heart.style.top=pos+"px";
+
+if(pos>window.innerHeight){
+
+clearInterval(fall);
+
 heart.remove();
-},6000);
 
 }
 
-setInterval(createHeart,300);
+},20);
+
+}
+setInterval(createHeart,1500);
+function createRose(){
+
+let rose=document.createElement("div");
+
+rose.className="rose";
+
+rose.innerHTML="🌹";
+
+rose.style.left=Math.random()*100+"vw";
+
+rose.style.top="-50px";
+
+rose.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(rose);
+
+let pos=-50;
+
+const fall=setInterval(()=>{
+
+pos+=1.5;
+
+rose.style.top=pos+"px";
+
+if(pos>window.innerHeight){
+
+clearInterval(fall);
+
+rose.remove();
+
+}
+
+},20);
+
+}
+setInterval(createRose,3000);
+let current=0;
+
+function updateDots(){
+
+let dots=document.querySelectorAll(".dot");
+
+dots.forEach(dot=>{
+dot.classList.remove("active");
+});
+
+dots[current].classList.add("active");
+
+}
+function updateCounter(){
+
+document.getElementById("photoCounter").innerHTML =
+"Photo " + (current + 1) + " of 9 ❤️";
+
+updateDots();
+
+}
+
+
+function nextPhoto(){
+
+current++;
+
+if(current>=photos.length){
+current=0;
+}
+
+document.getElementById("slide").src=photos[current];
+
+updateCounter();
+
+}
+
+function prevPhoto(){
+
+current--;
+
+if(current<0){
+current=photos.length-1;
+}
+
+document.getElementById("slide").src=photos[current];
+
+updateCounter();
+
+}
+
+function goToPhoto(index){
+
+current=index;
+
+document.getElementById("slide").src=photos[current];
+
+updateCounter();
+
+}
+function openMemoriesPage(){
+    window.location.href="/memories";
+}
+
 
 </script>
 

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Few More Surprises ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(
+135deg,
+#ff758c 0%,
+#ff7eb3 35%,
+#ffc1cc 70%,
+#ffe4ec 100%
+);
+color:white;
+text-align:center;
+padding:30px;
+min-height:100vh;
+}
+
+h1{
+font-family:'Dancing Script',cursive;
+font-size:4rem;
+margin-bottom:30px;
+
+text-shadow:
+0 0 15px white,
+0 0 30px pink;
+}
+
+.card{
+
+max-width:800px;
+
+margin:25px auto;
+
+padding:25px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:
+0 8px 32px rgba(255,255,255,.15);
+}
+
+.card h2{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2.5rem;
+
+margin-bottom:15px;
+}
+
+.card button{
+
+padding:12px 25px;
+
+margin:10px;
+
+border:none;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.2);
+
+color:white;
+
+font-size:1rem;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.card button:hover{
+
+transform:scale(1.08);
+}
+
+.result{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2rem;
+
+margin-top:15px;
+}
+
+input[type=range]{
+
+width:80%;
+margin-top:20px;
+}
+
+.star{
+
+font-size:50px;
+
+cursor:pointer;
+
+margin:5px;
+}
+
+.homeBtn{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:15px 30px;
+
+background:rgba(255,255,255,.2);
+
+border-radius:30px;
+
+color:white;
+
+text-decoration:none;
+
+font-size:1.2rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎁 A Few More Surprises 🎁</h1>
+
+<!-- LOVE METER -->
+
+<div class="card">
+
+<h2>❤️ Love Meter ❤️</h2>
+
+<input
+type="range"
+min="0"
+max="100"
+value="70"
+oninput="updateLove(this.value)">
+
+<p id="loveResult" class="result">
+Very Much ❤️
+</p>
+
+</div>
+
+<!-- MEMORY CARDS -->
+
+<div class="card">
+
+<h2>💌 Memory Cards 💌</h2>
+
+<button onclick="showMemory(1)">
+First Memory
+</button>
+
+<button onclick="showMemory(2)">
+Favourite Moment
+</button>
+
+<button onclick="showMemory(3)">
+Future Wish
+</button>
+
+<p id="memoryText" class="result">
+Click a card ❤️
+</p>
+
+</div>
+
+<!-- SURPRISE BOX -->
+
+<div class="card">
+
+<h2>🎁 Surprise Box 🎁</h2>
+
+<button onclick="openGift()">
+Open Gift
+</button>
+
+<p id="giftText" class="result">
+A surprise awaits ❤️
+</p>
+
+</div>
+
+<!-- PICK A STAR -->
+
+<div class="card">
+
+<h2>⭐ Pick A Star ⭐</h2>
+
+<span class="star" onclick="pickStar(1)">⭐</span>
+<span class="star" onclick="pickStar(2)">⭐</span>
+<span class="star" onclick="pickStar(3)">⭐</span>
+<span class="star" onclick="pickStar(4)">⭐</span>
+<span class="star" onclick="pickStar(5)">⭐</span>
+
+<p id="starMessage" class="result">
+Choose a star ✨
+</p>
+<div class="card">
+
+<h2>🥰 What Do You Like In Me? 🥰</h2>
+
+<button onclick="showAnswer('Caring')">
+❤️ Caring
+</button>
+
+<button onclick="showAnswer('Love')">
+💖 Love
+</button>
+
+<button onclick="showAnswer('Concern')">
+🤗 Concern
+</button>
+
+<button onclick="showAnswer('Importance')">
+🌹 Importance
+</button>
+
+<button onclick="showAnswer('Innocence')">
+✨ Innocence
+</button>
+
+<p id="likeResult" class="result">
+Choose one ❤️
+</p>
+
+</div>
+
+</div>
+
+<!-- 100 REASONS -->
+
+<div class="card">
+
+<h2>💖 Why You're Special 💖</h2>
+
+<button onclick="showReason()">
+Tell Me A Reason ❤️
+</button>
+
+<p id="reasonText" class="result">
+Click the button ❤️
+</p>
+
+</div>
+
+<a href="/" class="homeBtn">
+🏠 Back To Home
+</a>
+
+<script>
+
+function updateLove(value){
+
+let text="";
+
+if(value<30){
+text="Just Friends 😜";
+}
+else if(value<70){
+text="Maybe 😏";
+}
+else if(value<100){
+text="Very Much ❤️";
+}
+else{
+text="Infinity ♾️❤️";
+}
+
+document.getElementById("loveResult").innerHTML=text;
+
+}
+
+function showMemory(id){
+
+let msg="";
+
+if(id==1){
+msg="First time we eat panipuri in college event stall ❤️";
+}
+
+if(id==2){
+msg="The moment i feed to you with my hands 🌹";
+}
+
+if(id==3){
+msg="We should stay forever until our last breath ✨";
+}
+
+document.getElementById("memoryText").innerHTML=msg;
+
+}
+
+const gifts=[
+
+"You're my favourite person ❤️",
+
+"Your smile makes my day 😊",
+
+"I miss you 🌹",
+
+"You are special 💕",
+
+"I love you 💖"
+
+];
+
+function openGift(){
+
+let random=
+Math.floor(Math.random()*gifts.length);
+
+document.getElementById("giftText").innerHTML=
+gifts[random];
+
+}
+
+function pickStar(id){
+
+const messages=[
+
+"You make me smile ❤️",
+
+"You're beautiful 🌹",
+
+"I appreciate you 💌",
+
+"My favourite person 🥰",
+
+"I love you 💖"
+
+];
+
+document.getElementById("starMessage").innerHTML=
+messages[id-1];
+
+}
+
+const reasons=[
+
+"Your smile 😊",
+
+"Your kindness 🌷",
+
+"The way you care ❤️",
+
+"Your voice 🎵",
+
+"Your support 🤝",
+
+"Your patience 💕",
+
+"Your cute talks 🥰",
+
+"Everything about you 💖"
+
+];
+
+function showReason(){
+
+let random=
+Math.floor(Math.random()*reasons.length);
+
+document.getElementById("reasonText").innerHTML=
+reasons[random];
+
+}
+function showAnswer(choice){
+
+let msg="";
+
+if(choice=="Caring"){
+msg="❤️ Your caring nature makes me feel special.";
+}
+
+if(choice=="Love"){
+msg="💖 Your love means everything to me.";
+}
+
+if(choice=="Concern"){
+msg="🤗 The way you worry about me is adorable.";
+}
+
+if(choice=="Importance"){
+msg="🌹 You always make me feel important.";
+}
+
+if(choice=="Innocence"){
+msg="✨ Thanks to believe that i am innocent and pure.";
+}
+
+document.getElementById("likeResult").innerHTML = msg;
+
+}
+</script>
+
+</body>
+</html>
