@@ -35,7 +35,7 @@ min-height:100vh;
 
 h1{
 font-family:'Dancing Script',cursive;
-font-size:4rem;
+font-size:2.8rem;
 margin-bottom:30px;
 
 text-shadow:
@@ -71,7 +71,36 @@ font-size:2.5rem;
 
 margin-bottom:15px;
 }
+.songText{
 
+font-family:'Dancing Script',cursive !important;
+
+font-size:2.6rem;
+
+line-height:1.8;
+
+color:#2B0A3D;
+
+font-weight:bold;
+
+text-shadow:
+1px 1px 3px white;
+
+}
+.songTitle{
+
+font-family:'Dancing Script',cursive;
+
+font-size:3rem;
+
+color:#FF1493;
+
+text-shadow:
+0 0 15px rgba(255,20,147,.6);
+
+margin-bottom:20px;
+
+}
 .card button{
 
 padding:12px 25px;
@@ -140,7 +169,153 @@ text-decoration:none;
 
 font-size:1.2rem;
 }
+#themeBtn{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(15px);
+border:2px solid rgba(255,255,255,.4);
+border-radius:30px;
+padding:15px 30px;
+color:white;
+font-size:1.3rem;
+font-family:'Dancing Script',cursive;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,255,255,.3);
+margin-bottom:20px;
+}
+.homeBtn{
 
+background:rgba(255,255,255,.18) !important;
+
+backdrop-filter:blur(15px);
+
+border:4px solid rgba(255,255,255,.85);
+
+border-radius:50px;
+
+padding:18px 40px;
+
+font-family:'Dancing Script',cursive;
+
+font-size:2rem;
+
+color:white !important;
+
+cursor:pointer;
+
+text-decoration:none !important;
+
+display:inline-block;
+
+box-shadow:
+0 0 15px rgba(255,255,255,.6),
+0 0 30px rgba(255,192,203,.5);
+
+}
+#themeBtn:hover{
+transform:scale(1.05);
+}
+.dark-mode .card{
+
+background:rgba(20,20,20,.6);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 0 25px rgba(255,105,180,.2);
+
+}
+
+.dark-mode h1{
+
+text-shadow:
+0 0 20px #ff66cc,
+0 0 40px #ff3399;
+
+}
+button{
+    font-family:'Dancing Script', cursive !important;
+    font-size:2rem !important;
+}
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup .card{
+max-width:900px;
+max-height:85vh;
+overflow:auto;
+}
+.surpriseBtn{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.2);
+
+backdrop-filter:blur(15px);
+
+border:3px solid rgba(255,255,255,.5);
+
+color:white;
+
+font-family:'Dancing Script',cursive;
+
+font-size:2rem;
+
+cursor:pointer;
+
+box-shadow:
+0 0 15px rgba(255,255,255,.5);
+
+}
+.passwordBox{
+border:3px solid rgba(255,255,255,.6);
+width:320px;
+
+padding:18px 25px;
+
+border:none;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.2);
+
+backdrop-filter:blur(15px);
+
+color:#2B0a3d;
+
+font-size:1.5rem;
+
+font-family:'Dancing Script',cursive;
+
+text-align:center;
+
+outline:none;
+
+box-shadow:
+0 0 15px rgba(255,255,255,.5);
+
+}
+
+.passwordBox::placeholder{
+
+color:#8B004F;
+
+font-family:'Dancing Script',cursive;
+
+}
 </style>
 
 </head>
@@ -149,6 +324,12 @@ font-size:1.2rem;
 
 <h1>🎁 A Few More Surprises 🎁</h1>
 
+<br><br>
+
+<button id="themeBtn" onclick="toggleTheme()">
+🌙 Dark Romance
+</button>
+<br><br>
 <!-- LOVE METER -->
 
 <div class="card">
@@ -167,7 +348,10 @@ Very Much ❤️
 </p>
 
 </div>
-
+<div class="card">
+<h2>⏳ Our Journey</h2>
+<p id="daysCounter" class="result"></p>
+</div>
 <!-- MEMORY CARDS -->
 
 <div class="card">
@@ -254,7 +438,58 @@ Choose one ❤️
 </div>
 
 </div>
+<div class="card">
 
+<h2 class="songTitle">
+🎵 Premalo ❤️
+</h2>
+
+<button class="surpriseBtn" onclick="showSongDedication()">
+🎵 Open My Song Dedication 🎵
+</button>
+
+<div id="songPopup" class="popup">
+
+    <div class="card">
+
+        <h2 class="songTitle">🎵 Premalo ❤️</h2>
+
+        <p class="songText">
+
+        Dear Shanthi ❤️,
+
+        Among all the songs I've heard,
+        Premalo feels the closest to what I feel for you.
+
+        Every time it plays,
+        it reminds me of your voice and the way you sing it for me. 🎶
+
+        And the happiness you bring into my life. 🌹
+
+        So today,
+        I dedicate this song to you. ❤️
+
+        </p>
+        <div style="
+         text-align:right;
+         margin-top:25px;
+         font-family:'Dancing Script',cursive;
+         font-size:2rem;
+         color:#2B0A3D;
+         ">
+        – Yours,<br>
+        Manoj ❤️
+        </div>
+<div style="text-align:center;margin-top:30px;">
+
+        <button class="surpriseBtn"
+        onclick="closeSongDedication()">
+        ❤️ Close
+        </button>
+
+    </div>
+</div>
+</div>
 <!-- 100 REASONS -->
 
 <div class="card">
@@ -271,10 +506,22 @@ Click the button ❤️
 
 </div>
 
-<a href="/" class="homeBtn">
-🏠 Back To Home
-</a>
 
+<!-- OUTSIDE popup -->
+
+<br><br>
+
+<div style="text-align:center;margin-top:25px;">
+
+<button class="homeBtn"
+onclick="window.location.href='/'">
+
+🏠 Back To Home
+
+</button>
+
+</div>
+</div>
 <script>
 
 function updateLove(value){
@@ -328,7 +575,58 @@ const gifts=[
 
 "You are special 💕",
 
-"I love you 💖"
+"I love you 💖",
+"You are my happy place 🥰",
+"My heart feels calm with you ❤️",
+"I love your smile 😊",
+"You complete my world 🌎",
+"I miss you every day 🌹",
+"You are my sunshine ☀️",
+"You make life beautiful 💖",
+"My favourite notification 📱❤️",
+"You are my lucky charm 🍀",
+"I adore your voice 🎶",
+"You are my dream come true ✨",
+"My forever person 💕",
+"You make me feel special 🌷",
+"You are my peace 🕊️",
+"My sweetest memory ❤️",
+"You are my comfort zone 🤗",
+"I love thinking about you 💭",
+"You make every day brighter ☀️",
+"You are my happiness 😊",
+"I cherish every moment with you 💞",
+"You are my favourite hello ❤️",
+"My heart chooses you every day 🌹",
+"You are my safe place 🏡",
+"I feel lucky to have you 🍀",
+"You make me smile instantly 😍",
+"My heart belongs to you 💖",
+"You are my biggest blessing 🙏❤️",
+"I love your caring nature 🌷",
+"You make ordinary days magical ✨",
+"You are my sweetest habit 🥰",
+"I love hearing your name ❤️",
+"You are my favourite chapter 📖",
+"You are worth everything 💕",
+"I admire you 🌹",
+"You make me feel alive ❤️",
+"My world is brighter with you ☀️",
+"I treasure your love 💖",
+"You are my daily smile 😊",
+"I love your innocence ✨",
+"You are my heart's home 🏡❤️",
+"I feel complete with you 💞",
+"You are my favourite person ever 🌹",
+"You make my heart race 💓",
+"I love every little thing about you 🥰",
+"You are my best gift 🎁",
+"I love talking to you ❤️",
+"You are my sweetest thought 💭",
+"My heart smiles because of you 😊",
+"You are my forever wish 🌠",
+"You make my life colourful 🌈",
+"I love your cute talks 🥺❤️",
 
 ];
 
@@ -354,8 +652,51 @@ const messages=[
 
 "My favourite person 🥰",
 
-"I love you 💖"
-
+"I love you 💖",
+"You are my precious one 💎",
+"I think of you all the time 💕",
+"You are my reason to smile 🌷",
+"My heart feels at home with you ❤️",
+"You make me feel loved 🥰",
+"I never get tired of you 💖",
+"You are my little miracle ✨",
+"You are my favourite story 📖❤️",
+"I love your kindness 🌹",
+"You make every moment special 💞",
+"My heart beats for you 💓",
+"You are my sweetest blessing 🙏❤️",
+"You light up my life ☀️",
+"I love your concern 🤗",
+"You are my strongest support 💕",
+"You make me believe in love ❤️",
+"You are my dream girl 🌷",
+"I love your beautiful heart 💖",
+"You make my world complete 🌎",
+"You are my greatest treasure 💎",
+"My heart feels safe with you 🏡",
+"You are my forever happiness 😊",
+"I love your patience 🌹",
+"You are my favourite thought 💭",
+"You make my soul smile ❤️",
+"You are my perfect person 💕",
+"I love every memory with you 📸",
+"You are my sweetest surprise 🎁",
+"You make my life meaningful 🌷",
+"I love your warm heart ❤️",
+"You are my daily motivation ✨",
+"My happiest moments are with you 🥰",
+"You are my forever love 💖",
+"I love your honesty 🌹",
+"You are my moon and stars 🌙⭐",
+"You make everything better ❤️",
+"I love your caring eyes 👀💕",
+"You are my sweetest dream 🌷",
+"My heart is happiest with you 💞",
+"You are my favourite blessing ❤️",
+"I love the way you understand me 🤗",
+"You are my beautiful destiny ✨",
+"My heart whispers your name 💖",
+"You are my everything ❤️"
 ];
 
 document.getElementById("starMessage").innerHTML=
@@ -417,6 +758,34 @@ msg="✨ Thanks to believe that i am innocent and pure.";
 }
 
 document.getElementById("likeResult").innerHTML = msg;
+
+}
+const startDate = new Date("2024-02-03"); // change date
+
+const today = new Date();
+
+const diffTime = today - startDate;
+
+const days = Math.floor(
+diffTime/(1000*60*60*24)
+);
+
+document.getElementById("daysCounter").innerHTML =
+days + " Days Together ❤️";
+function toggleTheme(){
+
+document.body.classList.toggle("dark-mode");
+
+}
+function showSongDedication(){
+
+document.getElementById("songPopup").style.display="flex";
+
+}
+
+function closeSongDedication(){
+
+document.getElementById("songPopup").style.display="none";
 
 }
 </script>
