@@ -6,6 +6,7 @@
 
 <title>Manu ❤️ Sweety</title>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -291,7 +292,23 @@ will-change:transform;
 }
 
 
+.closeLetterBtn{
 
+background:rgba(255,255,255,.12);
+
+border:2px solid rgba(255,255,255,.5);
+
+color:white;
+
+font-family:'Dancing Script',cursive;
+
+font-size:1.8rem;
+
+border-radius:40px;
+
+padding:15px 35px;
+
+}
 .popup{
 display:none;
 position:fixed;
@@ -389,60 +406,47 @@ font-size:1rem;
 audio{
 margin-top:15px;
 }
-#musicBtn{
 
-position:fixed;
 
-bottom:20px;
-right:20px;
+.letterText{
 
-width:70px;
-height:70px;
+font-family:'Dancing Script',cursive;
 
-border:none;
+font-size:2.2rem;
 
-border-radius:50%;
+line-height:2;
 
-background:rgba(255,255,255,.18);
+color:#2B0A3D;
 
-backdrop-filter:blur(15px);
+font-weight:bold;
 
-color:white;
+text-shadow:
+1px 1px 4px rgba(255,255,255,.8);
 
-font-size:28px;
+max-height:60vh;
 
-cursor:pointer;
+overflow-y:auto;
 
-border:1px solid rgba(255,255,255,.25);
+padding:15px;
 
-box-shadow:
-0 0 25px rgba(255,255,255,.2);
-
-z-index:9999;
-}
-
-#musicBtn:hover{
-transform:scale(1.1);
 }
 .letterText{
 
 font-family:'Dancing Script',cursive;
 
-font-size:2rem;
+font-size:2.2rem;
 
-line-height:1.8;
+line-height:2;
 
-color:#260362de;
+color:white;
+
+font-weight:bold;
 
 text-shadow:
-0 0 10px rgba(255,255,255,.4);
+0 0 10px rgba(255,255,255,.4),
+2px 2px 6px rgba(0,0,0,.8);
 
-max-height:60vh;
-overflow-y:auto;
-
-padding:10px;
 }
-
 #surprisePopup{
 
 background:rgba(0,0,0,.4);
@@ -655,6 +659,24 @@ font-family:'Dancing Script',cursive;
 font-size:1.4rem;
 
 }
+@media(max-width:768px){
+
+.letterText{
+
+font-size:1.7rem;
+
+line-height:2;
+
+color:#2B0A3D;
+
+font-weight:bold;
+
+text-shadow:
+1px 1px 5px rgba(255,255,255,.9);
+
+}
+
+}
 </style>
 </head>
 <body>
@@ -714,9 +736,6 @@ Click my heart to begin ❤️
 <source src="/static/music.mpeg" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn" onclick="toggleMusic()">
-🎵
-</button>
 
 <div class="slideshow">
 
@@ -732,6 +751,7 @@ Click my heart to begin ❤️
 </div>
 <p id="photoCounter">
 Photo 1 of 9 ❤️
+</p>
 <div id="dots">
 
 <span class="dot active" onclick="goToPhoto(0)"></span>
@@ -747,7 +767,7 @@ Photo 1 of 9 ❤️
 </div>
 </p>
 
-<div class="gallery">
+<div id="photosSection"class="gallery">
 
 <div class="card">
 <img src="/static/photo1.jpeg" onclick="openPhoto(this.src)">
@@ -798,7 +818,7 @@ Photo 1 of 9 ❤️
 
 <div class="loveLetterHeading">
 
-<h2>💌 This is not just a Love Letter,it Holds my Feelings,Emotions for you 💌</h2>
+<h2 class="letterTitle">💌 This is not just a Love Letter, it Holds my Feelings,Emotions for you 💌</h2>
 <br>
 <br>
 
@@ -809,6 +829,11 @@ Photo 1 of 9 ❤️
 
 <button class="surpriseBtn" onclick="openMemoriesPage()">
 🎁 A Few More Surprises 🎁
+</button>
+<br><br>
+
+<button class="surpriseBtn" onclick="logout()">
+🔒 Lock Website
 </button>
 </div>
 
@@ -828,7 +853,7 @@ Made With 💓 For Shanthi
 <div id="surprisePopup" class="popup">
 
 <div style="
-background:rgba(255,255,255,0.15);
+background:rgba(255,255,255,0.25);
 backdrop-filter:blur(20px);
 -webkit-backdrop-filter:blur(20px);
 
@@ -859,29 +884,35 @@ Nijam cheppali ante, nee presence naaku chala important aipoyindi. 😘 Oka mess
 
 Naa life lo chala mandi vacharu, vellaru. Kani kontha mandi matram mana heart lo permanent place sampadinchukuntaru.😣💫 Nuvvu alanti vallalo okaru.
 
-Ninnu chusthe naaku peace anipistundi. Nuvvu happy ga unte naaku santosham💟. Nuvvu badha padithe naaku kuda badha. Adi prema kaadho, care kaadho,💌💕 ledha renditilo konchem konchemo naaku teliyadu... kani nuvvu naaku chala special ani matram telusu.❣️🫶
+Ninnu chusthe naaku peace anipistundi. Nuvvu happy ga unte naaku santosham💟. Nuvvu badha padithe naaku kuda badha. Adi prema oo , care oo,💌💕 ledha renditilo konchem konchemo naaku teliyadu... kani nuvvu naaku chala special ani matram telusu.❣️🫶
 
 Nuvvu ilaage naa life lo undali ani korukuntanu.👥🤞 Endukante konni relationships ki labels avasaram undavu... vaati value manaki telustundi anthe. ❤️
 
 Enni godavalu vachina, enni misunderstandings vachina, nuvvu eppudu naa pakkane unnanduku chala thanks. 🫶❤️‍🩹
-
 Nuvvante naaku chala istam kanna. 🥺💖
 Naa life lo nuvvu undadam naaku chala special feeling. ✨
-
-
-
 Endukante naa rojullo chala mandi untaru... kani naa manasulo matram nuvvu okkadanive. ❤️🥹
-
 I really love you so much ra bangaram. 🫂💘
 Promise chesavu kadha... eppatiki untanu ani. Adhi marchipoku. 🥺🤞❤️
-</p>
-
+ </p>                                                                      
+<div style="
+text-align:right;
+margin-top:25px;
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:#2B0A3D;
+">
+– Yours Lovingly,<br>
+        Manoj ❤️
+</div>
 <br>
 
-<button class="surpriseBtn" onclick="closeSurprise()">
-❤️ Close Letter
+<div style="text-align:center; margin-top:40px; padding-bottom:120px;">
+    <button class="closeLetterBtn" onclick="closeSurprise()">
+    ❤️ Close Letter
 </button>
-
+</div>
+</div>
 </div>
 
 <script>
@@ -900,21 +931,7 @@ heartInterval = setInterval(createHeart,800);
 roseInterval = setInterval(createRose,1800);
 
 }
-function toggleMusic(){
 
-let music=document.getElementById("bgMusic");
-
-if(music.paused){
-
-music.play();
-
-}else{
-
-music.pause();
-
-}
-
-}
 function openPhoto(src){
 
 document.getElementById("photoPopup").style.display="flex";
@@ -1109,7 +1126,8 @@ function checkPassword(){
 let password =
 document.getElementById("passwordInput").value;
 
-if(password === "@chinnimanu"){
+if(password==="030225"){
+    localStorage.setItem("unlocked","true");
 
 document.getElementById("passwordScreen").style.display="none";
 
@@ -1122,6 +1140,8 @@ alert("Wrong Password ❤️");
 }
 
 }
+
+
 </script>
 
 </body>
